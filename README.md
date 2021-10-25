@@ -39,16 +39,11 @@ Dbgen creates multiple .tbl files in Oracle-like CSV format, one for each table
 ls *.tbl
 ```
 
-Convert them to a CSV format compatible with PostgreSQL and delete TBL files
+Convert them to a CSV format compatible with PostgreSQL, delete TBL files and move CSV files to */tmp/dss-data* (for scripts)
 ```bash
 for i in `ls *.tbl`; do sed 's/|$//' $i > ${i/tbl/csv}; echo $i; rm $i; done;
-for i in `ls *.tbl`; do rm $i; echo $i; done
-```
-
-Move CSV files to *dss/data* and create symlink to */tmp/dss-data* (for scripts)
-```bash
-for i in `ls *.csv`; do mv $i ../dss/data/; echo $i; done;
-ln -s /dss/data /tmp/dss-data
+mkdir /tmp/dss-data
+for i in `ls *.csv`; do mv $i /tmp/dss-data; echo $i; done;
 ```
 
 Loading the data to the database
@@ -59,6 +54,6 @@ Create database and run SQL scripts to load data (create tables, load data, crea
 /usr/local/pgsql/bin/createdb tpch
 /usr/local/pgsql/bin/psql tpch -f dss/tpch-load.sql
 /usr/local/pgsql/bin/psql tpch -f dss/tpch-pkeys.sql
-/usr/local/pgsql/bin/psql tpch -f dss/tpch-fkeys.sql
+/usr/local/pgsql/bin/psql tpch -f dss/tpch-fkey.sql
 /usr/local/pgsql/bin/psql tpch -f dss/tpch-index.sql
 ```
