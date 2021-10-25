@@ -1,0 +1,6 @@
+*.csv
+*.tbl
+*.o
+dbgen/dbgen
+dbgen/qgen
+dbgen/Makefile
