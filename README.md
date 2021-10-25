@@ -57,8 +57,8 @@ Loading the data to the database
 Create database and run SQL scripts to load data (create tables, load data, create indexes)
 ```bash
 /usr/local/pgsql/bin/createdb tpch
-/usr/local/pgsql/bin/psql tpch -f tpch-load.sql
-/usr/local/pgsql/bin/psql tpch -f tpch-pkeys.sql
-/usr/local/pgsql/bin/psql tpch -f tpch-fkeys.sql
-/usr/local/pgsql/bin/psql tpch -f tpch-index.sql
+/usr/local/pgsql/bin/psql tpch -f dss/tpch-load.sql
+/usr/local/pgsql/bin/psql tpch -f dss/tpch-pkeys.sql
+/usr/local/pgsql/bin/psql tpch -f dss/tpch-fkeys.sql
+/usr/local/pgsql/bin/psql tpch -f dss/tpch-index.sql
 ```
