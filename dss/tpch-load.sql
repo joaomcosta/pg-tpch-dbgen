@@ -22,7 +22,7 @@ BEGIN;
 		P_COMMENT		VARCHAR(23)
 	);
 
-	COPY part FROM '/dss/data/part.csv' WITH (FORMAT csv, DELIMITER '|');
+	COPY part FROM '/tmp/dss-data/part.csv' WITH (FORMAT csv, DELIMITER '|');
 
 COMMIT;
 
@@ -34,7 +34,7 @@ BEGIN;
 		R_COMMENT	VARCHAR(152)
 	);
 
-	COPY region FROM '/dss/data/region.csv' WITH (FORMAT csv, DELIMITER '|');
+	COPY region FROM '/tmp/dss-data/region.csv' WITH (FORMAT csv, DELIMITER '|');
 
 COMMIT;
 
@@ -47,7 +47,7 @@ BEGIN;
 		N_COMMENT		VARCHAR(152)
 	);
 
-	COPY nation FROM '/dss/data/nation.csv' WITH (FORMAT csv, DELIMITER '|');
+	COPY nation FROM '/tmp/dss-data/nation.csv' WITH (FORMAT csv, DELIMITER '|');
 
 COMMIT;
 
@@ -63,7 +63,7 @@ BEGIN;
 		S_COMMENT		VARCHAR(101)
 	);
 
-	COPY supplier FROM '/dss/data/supplier.csv' WITH (FORMAT csv, DELIMITER '|');
+	COPY supplier FROM '/tmp/dss-data/supplier.csv' WITH (FORMAT csv, DELIMITER '|');
 
 COMMIT;
 
@@ -80,7 +80,7 @@ BEGIN;
 		C_COMMENT		VARCHAR(117)
 	);
 
-	COPY customer FROM '/dss/data/customer.csv' WITH (FORMAT csv, DELIMITER '|');
+	COPY customer FROM '/tmp/dss-data/customer.csv' WITH (FORMAT csv, DELIMITER '|');
 
 COMMIT;
 
@@ -94,7 +94,7 @@ BEGIN;
 		PS_COMMENT		VARCHAR(199)
 	);
 
-	COPY partsupp FROM '/dss/data/partsupp.csv' WITH (FORMAT csv, DELIMITER '|');
+	COPY partsupp FROM '/tmp/dss-data/partsupp.csv' WITH (FORMAT csv, DELIMITER '|');
 
 COMMIT;
 
@@ -112,7 +112,7 @@ BEGIN;
 		O_COMMENT		VARCHAR(79)
 	);
 
-	COPY orders FROM '/dss/data/orders.csv' WITH (FORMAT csv, DELIMITER '|');
+	COPY orders FROM '/tmp/dss-data/orders.csv' WITH (FORMAT csv, DELIMITER '|');
 
 COMMIT;
 
@@ -137,6 +137,6 @@ BEGIN;
 		L_COMMENT		VARCHAR(44)
 	);
 
-	COPY lineitem FROM '/dss/data/lineitem.csv' WITH (FORMAT csv, DELIMITER '|');
+	COPY lineitem FROM '/tmp/dss-data/lineitem.csv' WITH (FORMAT csv, DELIMITER '|');
 
 COMMIT;
