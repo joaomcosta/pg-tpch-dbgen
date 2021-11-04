@@ -1,13 +1,11 @@
--- using default substitutions
-
 select
     o_orderpriority,
-    count(*) as order_count
+    count(o_orderkey) as order_count
 from
     orders
 where
     o_orderdate >= date '1993-07-01'
-    and o_orderdate < date '1993-07-01' + interval '3' month
+    and o_orderdate < date '1993-10-01'
     and exists (
         select
             *
@@ -23,11 +21,10 @@ order by
     o_orderpriority;
 
 
--- Without interval keyword
 
-select
+explain analyze select
     o_orderpriority,
-    count(*) as order_count
+    ANON_COUNT(o_orderkey, 0.1) as order_count
 from
     orders
 where
