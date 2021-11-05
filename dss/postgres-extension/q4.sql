@@ -20,9 +20,7 @@ group by
 order by
     o_orderpriority;
 
-
-
-explain analyze select
+select
     o_orderpriority,
     ANON_COUNT(o_orderkey, 0.1) as order_count
 from
@@ -43,3 +41,6 @@ group by
     o_orderpriority
 order by
     o_orderpriority;
+
+
+-- SAMPLE SIZE= 52523 

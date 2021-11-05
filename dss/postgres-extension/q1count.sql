@@ -14,7 +14,7 @@ order by
     l_linestatus;
 
 
-explain analyze select
+select
     l_returnflag,
     l_linestatus,
     ANON_COUNT(l_orderkey, 0.1) as count_order
@@ -28,3 +28,6 @@ group by
 order by
     l_returnflag,
     l_linestatus;
+
+
+-- SAMPLE SIZE= 5914748, aprox 6M

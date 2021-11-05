@@ -33,9 +33,7 @@ order by
 	p_size;
 
 
-
-
-explain analyze WITH _t1 AS (
+WITH _t1 AS (
 select
 	p_brand,
 	p_type,
@@ -67,5 +65,6 @@ order by
 	supplier_cnt desc,
 	p_brand,
 	p_type,
-	p_size
-limit 5;
+	p_size;
+
+-- SAMPLE SIZE= 118274

@@ -14,7 +14,7 @@ order by
     l_linestatus;
 
 
-explain analyze select
+select
     l_returnflag,
     l_linestatus,
     ANON_AVG_WITH_BOUNDS(l_quantity, 1, 50, 0.1) as avg_qty

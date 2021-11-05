@@ -28,11 +28,7 @@ order by
     numwait desc,
     s_name;
 
-
-
-
-
-explain analyze select
+select
     s_name,
     ANON_COUNT(s_suppkey, 0.1) as numwait
 from
@@ -60,5 +56,6 @@ group by
     s_name
 order by
     numwait desc,
-    s_name
-limit 5;
+    s_name;
+
+-- SAMPLE SIZE=73089
